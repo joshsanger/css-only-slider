@@ -73,9 +73,13 @@ Apart from some styling for the demo, all you need for this to work is:
         &:checked {
             & + label {
                 background: #0099ff;
+                
+                // make all slides after the input field right
                 & ~ .slide {
                     transform: translate(100%);
                 }
+                
+                // bring the active slide to the middle
                 & + .slide {
                     transform: translate(0%);
                 }
