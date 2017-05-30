@@ -7,6 +7,8 @@
         <title>ENTER TITLE</title>
         <script src="<?php echo BASE_URL;?>/_assets/js/lib/modernizr.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo BASE_URL;?>/_assets/css/master.min.css">
+
     </head>
     <body>
