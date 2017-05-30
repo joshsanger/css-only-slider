@@ -1,10 +1,10 @@
 # CSS Only Slider
 
-##The Mission
+## The Mission
 
 As a challenge to myself, I set out to make a CSS only slider. After trying 3 different approaches, the following is the best way I have found so far:
 
-##The Markup
+## The Markup
 
 Each slide consists of an input field, a label for the input (So you can style it however you wish) and a slide. 
 
@@ -39,7 +39,7 @@ Each slide consists of an input field, a label for the input (So you can style i
 
 ```
 
-##The Styling (Less)
+## The Styling (Less)
 Apart from some styling for the demo, all yoou need for this to work is:
 ```less
 .slider-wrapper {
