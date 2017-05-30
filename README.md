@@ -92,4 +92,5 @@ Apart from some styling for the demo, all you need for this to work is:
         transform: translate(-100%);    
         background: #777777;
     }
-}```
+}
+```
