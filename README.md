@@ -2,7 +2,7 @@
 
 ## The Mission
 
-As a challenge to myself, I set out to make a CSS only slider. After trying 3 different approaches, the following is the best way I have found so far:
+As a challenge to myself, I set out to make a CSS only slider. After trying 3 different approaches, the following is the best way I have found so far. [View demo](http://joshuasanger.ca/libraries/css-only-slider)
 
 ## The Markup
 
