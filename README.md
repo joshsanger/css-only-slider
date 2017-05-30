@@ -1,2 +1,95 @@
-# css-only-slider
-A Css Only Slider
+# CSS Only Slider
+
+##The Mission
+
+As a challenge to myself, I set out to make a CSS only slider. After trying 3 different approaches, the following is the best way I have found so far:
+
+##The Markup
+
+Each slide consists of an input field, a label for the input (So you can style it however you wish) and a slide. 
+
+```html
+<div class="slider-wrapper">
+    
+    <input type="radio" name="slide-control" id="control1" checked/>
+    <label for="control1"></label>
+    <div class="slide" style="background-image: url(https://unsplash.it/1200/600/?image=1062)">
+        <div>
+            <span>Slide 1</span>
+        </div>
+    </div> <!-- /slide -->
+    
+    <input type="radio" name="slide-control" id="control2"/>
+    <label for="control2"></label>
+    <div class="slide" style="background-image: url(https://unsplash.it/1200/600/?image=876)">
+        <div>
+            <span>Slide 2</span>
+        </div>
+    </div> <!-- /slide -->
+    
+    <input type="radio" name="slide-control" id="control3"/>
+    <label for="control3"></label>
+    <div class="slide" style="background-image: url(https://unsplash.it/1200/600/?image=957)">
+        <div>
+            <span>Slide 3</span>
+        </div>
+    </div> <!-- /slide -->
+    
+</div>
+
+```
+
+##The Styling (Less)
+Apart from some styling for the demo, all yoou need for this to work is:
+```less
+.slider-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    position: relative;
+    padding-top: 40%;
+    overflow: hidden;
+    & > * + *:not(.slide) {
+        margin-left: 15px;
+    }
+    & input[type="radio"] {
+        position: absolute;
+        left: -9999px;
+        & + label {
+            cursor: pointer;
+            margin-top: 20px;
+            height: 17px;
+            width: 17px;
+            border-radius: 50%;
+            display: inline-block;
+            background: #cccccc;
+        }
+        &:checked {
+            & + label {
+                background: #0099ff;
+                & ~ .slide {
+                    transform: translate(100%);
+                }
+                & + .slide {
+                    transform: translate(0%);
+                }
+            }
+        }
+    }
+    & .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 40%;
+        .trans(all, 0.4s);
+        transform: translate(-100%);    
+        background: #7777777;
+    }
+}
+
+
+```
