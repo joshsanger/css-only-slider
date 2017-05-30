@@ -90,9 +90,6 @@ Apart from some styling for the demo, all you need for this to work is:
         padding-top: 40%;
         .trans(all, 0.4s);
         transform: translate(-100%);    
-        background: #7777777;
+        background: #777777;
     }
-}
-
-
-```
+}```
