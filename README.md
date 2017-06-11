@@ -53,7 +53,7 @@ Apart from some styling for the demo, all you need for this to work is:
     flex-flow: row wrap;
     justify-content: center;
     position: relative;
-    padding-top: 40%;
+    padding-top: 500px;
     overflow: hidden;
     & > * + *:not(.slide) {
         margin-left: 15px;
@@ -91,7 +91,7 @@ Apart from some styling for the demo, all you need for this to work is:
         top: 0;
         left: 0;
         width: 100%;
-        padding-top: 40%;
+        height: 480px;
         .trans(all, 0.4s);
         transform: translate(-100%);    
         background: #777777;
