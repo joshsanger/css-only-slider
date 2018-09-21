@@ -1,20 +1,6 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        uglify: {
-            options: {
-                mangle: true,
-                compress: {
-                    sequences: false
-                },
-            },
-            build: {
-                src: [
-                    '_assets/js/src/*.js'
-                ],
-                dest: '_assets/js/main.min.js'
-            }
-        },
         concat : {
             basic : {
                 src : [
@@ -22,6 +8,7 @@ module.exports = function(grunt) {
                     '_assets/css/src/reset.less',
                     '_assets/css/src/global.less',
                     '_assets/css/src/material-icons.less',
+                    '_assets/css/src/*.less'
                 ],
                 dest : './_assets/css/staging.less'
             }
@@ -38,13 +25,10 @@ module.exports = function(grunt) {
         }
     });
 
-    // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'concat', 'less']);
+    grunt.registerTask('default', ['concat', 'less']);
     grunt.registerTask('buildCss', ['concat', 'less']);
-    grunt.registerTask('buildJs', ['uglify']);
 };
