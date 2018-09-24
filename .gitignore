@@ -1,6 +1,6 @@
 /.idea
 /node_modules
-/_assets/css/staging.less
+/development/css/staging.less
 /_assets/css/master.min.css
 /_assets/js/main.min.js
 /_includes/config.php
