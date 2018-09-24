@@ -1,3 +1,42 @@
+
+.track {
+    height: 11px;
+    width: 68vw;
+    left: 16vw;
+    bottom: 60px;
+    position: fixed;
+    z-index: 11;
+    .flex-container();
+    & label {
+        cursor: pointer;
+        height: 11px;
+        width: 25%;
+        position: relative;
+        z-index: 14;
+    }
+    &::before {
+        content: '';
+        background: fade(@black, 30%);
+        position: absolute;
+        left: 0;
+        top: 5px;
+        height: 1px;
+        width: 100%;
+        z-index: 12;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 25%;
+        top: 5px;
+        height: 1px;
+        background: @black;
+        z-index: 13;
+        .transform(~"translate3d(0,0,0)");
+        .trans(~"all 0.8s  cubic-bezier(0.770, -0.005, 0.105, 1.000)");
+    }
+}
 .slides {
     position: relative;
     padding: 0 6vw;
@@ -9,7 +48,7 @@
         overflow: hidden;
         width: 85vw;
         .flex(0 0 auto);
-        height: ~"calc(100vh - 200px)";
+        height: ~"calc(100vh - 230px)";
         margin: 0 1.5vw;
         background: @black center center /cover;
         position: relative;
@@ -37,7 +76,7 @@ section {
         width: 100%;
     }
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 114px;
     & input {
         position: absolute;
         left: -99999px;
@@ -55,6 +94,11 @@ section {
                         }
                     }
                 }
+                & ~ .track {
+                    &::after {
+                        .transform(~"translate3d(0%,0,0)");
+                    }
+                }
             }
 
         }
@@ -67,6 +111,11 @@ section {
                             .transform(~"translate3d(0,0,0)");
                             .trans(~"all 0.4s 0.6s  cubic-bezier(0.770, -0.005, 0.105, 1.000)");
                         }
+                    }
+                }
+                & ~ .track {
+                    &::after {
+                        .transform(~"translate3d(100%,0,0)");
                     }
                 }
             }
@@ -82,6 +131,11 @@ section {
                         }
                     }
                 }
+                & ~ .track {
+                    &::after {
+                        .transform(~"translate3d(200%,0,0)");
+                    }
+                }
             }
         }
         &#slide-4-control {
@@ -95,6 +149,11 @@ section {
                         }
                     }
                 }
+                & ~ .track {
+                    &::after {
+                        .transform(~"translate3d(300%,0,0)");
+                    }
+                }
             }
         }
     }
@@ -103,7 +162,7 @@ section {
         display: none;
         .justify-content(space-between);
         width: 100%;
-        height: 100px;
+        height: 114px;
         position: relative;
         z-index: 5;
         & label {
@@ -113,8 +172,9 @@ section {
             .justify-content(center);
             background: @black;
             color: @white;
-            height: 160%;
-            top: -60px;
+            height: 100%;
+            top: -62px;
+            min-width: 114px;
             position: relative;
             width: 12vw;
             & span {
@@ -154,19 +214,137 @@ aside {
     }
     & > a {
         position: absolute;
-        bottom: 10px;
+        bottom: 15px;
         color: @black;
-        right: 10px;
+        right: 15px;
         text-decoration: none;
         .trans(color, 0.3s);
         &:hover {
             color: lighten(@black, 20%);
         }
         & i {
-            font-size: 20px;
+            font-size: 26px;
         }
     }
 }
-.controls {
+@media screen and (max-width: 960px) {
+    .track {
+        display: none;
+    }
+    body,
+    html {
+        height: 100%;
+        min-height: 400px;
+    }
+    aside {
+        height: 114px;
+        position: relative;
+        z-index: 5;
+        background: @white;
+        padding: 0 30px;
+        color: @black;
+        .flex-container();
+        .align-items(center);
+        & h1 {
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        & p {
+            margin-top: 5px;
+            font-size: 13px;
+            font-weight: 400;
+            & i {
+                color: #d14e4e;
+            }
+            & a {
+                color: @black;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        & > a {
+            position: absolute;
+            bottom: 15px;
+            color: @black;
+            right: 15px;
+            text-decoration: none;
+            .trans(color, 0.3s);
+            &:hover {
+                color: lighten(@black, 20%);
+            }
+            & i {
+                font-size: 26px;
+            }
+        }
+    }
+    section {
+        padding-top: 0px;
+        height: ~"calc(100% - 114px)";
+        & > .arrows {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            bottom: 0;
+            z-index: 5;
+            & label {
+                cursor: pointer;
+                .flex-container();
+                .align-items(center);
+                .justify-content(center);
+                background: @black;
+                color: @white;
+                height: 100%;
+                top: 0px;
+                min-width: 90px;
+                position: relative;
+                width: 12vw;
+                & span {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .slides {
+        height: 100%;
+        & .slide {
+            cursor: pointer;
+            overflow: hidden;
+            width: 85vw;
+            .flex(0 0 auto);
+            height: 100%;
+            margin: 0 1.5vw;
+            background: @black center center /cover;
+            position: relative;
+            & span {
+                font-weight: 600;
+                position: absolute;
+                right: 20px;
+                .trans(~"all 0.4s cubic-bezier(0.770, -0.005, 0.105, 1.000)");
+                top: 0px;
+                .transform(~"translate3d(calc(100% + 20px),0,0)");
+                color: @white;
+                opacity: .3;
+                font-size: 20vw;
+            }
+        }
+    }
+}
 
+@media screen and (max-width: 420px) {
+    .slides {
+        & .slide {
+            & span {
+                font-size: 30vw;
+            }
+        }
+    }
+    aside {
+        & h1 {
+            font-size: 16px;
+        }
+    }
 }
