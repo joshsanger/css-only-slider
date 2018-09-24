@@ -1,4 +1,9 @@
-
+body {
+    opacity: 0;
+    -webkit-animation: load 0.6s 0.5s forwards;
+    -moz-animation: load 0.6s 0.5s forwards;
+    animation: load 0.6s 0.5s forwards;
+}
 .track {
     height: 11px;
     width: 68vw;
@@ -227,6 +232,30 @@ aside {
         }
     }
 }
+@-moz-keyframes load {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes load {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 @media screen and (max-width: 960px) {
     .track {
         display: none;
@@ -240,46 +269,9 @@ aside {
         height: 114px;
         position: relative;
         z-index: 5;
-        background: @white;
         padding: 0 30px;
-        color: @black;
         .flex-container();
         .align-items(center);
-        & h1 {
-            text-transform: uppercase;
-            font-size: 18px;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-        }
-        & p {
-            margin-top: 5px;
-            font-size: 13px;
-            font-weight: 400;
-            & i {
-                color: #d14e4e;
-            }
-            & a {
-                color: @black;
-                text-decoration: none;
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-        & > a {
-            position: absolute;
-            bottom: 15px;
-            color: @black;
-            right: 15px;
-            text-decoration: none;
-            .trans(color, 0.3s);
-            &:hover {
-                color: lighten(@black, 20%);
-            }
-            & i {
-                font-size: 26px;
-            }
-        }
     }
     section {
         padding-top: 0px;
@@ -291,17 +283,10 @@ aside {
             bottom: 0;
             z-index: 5;
             & label {
-                cursor: pointer;
-                .flex-container();
-                .align-items(center);
-                .justify-content(center);
-                background: @black;
-                color: @white;
                 height: 100%;
                 top: 0px;
                 min-width: 90px;
                 position: relative;
-                width: 12vw;
                 & span {
                     font-size: 20px;
                 }
@@ -311,23 +296,8 @@ aside {
     .slides {
         height: 100%;
         & .slide {
-            cursor: pointer;
-            overflow: hidden;
-            width: 85vw;
-            .flex(0 0 auto);
             height: 100%;
-            margin: 0 1.5vw;
-            background: @black center center /cover;
-            position: relative;
             & span {
-                font-weight: 600;
-                position: absolute;
-                right: 20px;
-                .trans(~"all 0.4s cubic-bezier(0.770, -0.005, 0.105, 1.000)");
-                top: 0px;
-                .transform(~"translate3d(calc(100% + 20px),0,0)");
-                color: @white;
-                opacity: .3;
                 font-size: 20vw;
             }
         }
