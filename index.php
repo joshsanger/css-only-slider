@@ -23,7 +23,7 @@
         <label for="slide-2-control" class="prev"><span class="fal fa-long-arrow-left"></span></label>
         <label for="slide-4-control" class="next"><span class="fal fa-long-arrow-right"></span></label>
     </div>
-    <input type="radio" name="slides" id="slide-4-control" value="4"">
+    <input type="radio" name="slides" id="slide-4-control" value="4">
     <div class="arrows">
         <label for="slide-3-control" class="prev"><span class="fal fa-long-arrow-left"></span></label>
         <label for="slide-1-control" class="next"><span class="fal fa-long-arrow-right"></span></label>
