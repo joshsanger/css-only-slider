@@ -6,5 +6,6 @@ As a challenge to myself, I set out to make a CSS only sliding showcase. There a
 
 ## Ways to navigate
 * Keyboard Arrows
+* Arrows on screen
 * Click on bottom track sections
 * Click on slides
